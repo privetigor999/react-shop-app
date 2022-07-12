@@ -1,3 +1,15 @@
+import React from "react";
+import logoPng from "./images/logo.png";
+import addPng from "./images/add.png";
+import cartPng from "./images/cart.png";
+import likePng from "./images/like.png";
+import likedItemPng from "./images/likedItem.png";
+import orderPng from "./images/order.png";
+import removePng from "./images/remove.png";
+import searchPng from "./images/search.png";
+import userPng from "./images/user.png";
+import cubePng from "./images/goods/cube.png";
+
 function App() {
   return (
     <div className="wrapper">
@@ -5,29 +17,17 @@ function App() {
         <div className="drawer">
           <div className="headerCart">
             <h1>Корзина</h1>
-            <img
-              src="./images/remove.png"
-              alt="remove"
-              className="removeCart"
-            />
+            <img src={removePng} alt="remove" className="removeCart" />
           </div>
 
           <div className="itemsInCart">
             <div className="itemInCart">
-              <img
-                src="./images/goods/cube.png"
-                alt="cube"
-                className="itemPng"
-              />
+              <img src={cubePng} alt="cube" className="itemPng" />
               <div className="infoItemInCart">
                 <p>Кубик Рубика 3х3х3</p>
                 <b>Цена: 1000 руб</b>
               </div>
-              <img
-                src="./images/remove.png"
-                alt="remove"
-                className="removeButton"
-              />
+              <img src={removePng} alt="remove" className="removeButton" />
             </div>
           </div>
 
@@ -47,7 +47,7 @@ function App() {
               </ul>
               <button className="orderButton">
                 Оформить
-                <img src="./images/order.png" alt="order" />
+                <img src={orderPng} alt="order" />
               </button>
             </div>
           </div>
@@ -56,7 +56,7 @@ function App() {
 
       <header>
         <div className="headerLeft">
-          <img src="./images/logo.png" alt="logo" className="headerLogo" />
+          <img src={logoPng} alt="logo" className="headerLogo" />
           <div className="headerInfo">
             <h2>Эврика!</h2>
             <p>Онлайн-магазин головоломок</p>
@@ -65,18 +65,14 @@ function App() {
 
         <ul className="headerRight">
           <li className="cartButton">
-            <img src="./images/cart.png" alt="cart" className="cartLogo" />
+            <img src={cartPng} alt="cart" className="cartLogo" />
             <span>100 руб.</span>
           </li>
           <li>
-            <img
-              src="./images/likedItem.png"
-              alt="liked"
-              className="likedLogo"
-            />
+            <img src={likedItemPng} alt="liked" className="likedLogo" />
           </li>
           <li>
-            <img src="./images/user.png" alt="user" className="userLogo" />
+            <img src={userPng} alt="user" className="userLogo" />
           </li>
         </ul>
       </header>
@@ -84,18 +80,14 @@ function App() {
         <div className="titlePlusSearchBlock">
           <h1>Все головоломки</h1>
           <div className="searchBlock">
-            <img src="./images/search.png" alt="search" />
+            <img src={searchPng} alt="search" />
             <input type="text" placeholder="Поиск..." />
           </div>
         </div>
         <div className="cards">
           <div className="card">
-            <img src="./images/like.png" alt="like" className="likeItem" />
-            <img
-              src="./images/goods/cube.png"
-              alt="item"
-              className="cardItem"
-            />
+            <img src={likePng} alt="like" className="likeItem" />
+            <img src={cubePng} alt="item" className="cardItem" />
             <p>Кубик Рубика 3х3х3</p>
             <p className="madeOfItem">
               Производство: <b>Китай</b>
@@ -106,16 +98,12 @@ function App() {
                 <b>1000 руб</b>
               </div>
               <button>
-                <img
-                  src="./images/add.png"
-                  alt="add"
-                  className="addPngButton"
-                />
+                <img src={addPng} alt="add" className="addPngButton" />
               </button>
             </div>
           </div>
           <div className="card">
-            <img src="./images/goods/cube.png" alt="item" />
+            <img src={cubePng} alt="item" />
             <p>Кубик Рубика 3х3х3</p>
             <p className="madeOfItem">
               Производство: <b>Китай</b>
@@ -126,11 +114,7 @@ function App() {
                 <b>1000 руб</b>
               </div>
               <button>
-                <img
-                  src="./images/add.png"
-                  alt="add"
-                  className="addPngButton"
-                />
+                <img src={addPng} alt="add" className="addPngButton" />
               </button>
             </div>
           </div>
