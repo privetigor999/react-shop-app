@@ -1,0 +1,57 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px;
+  border-bottom: 1px solid #7a96af;
+  .headerLeft {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    .headerInfo {
+      h2 {
+        text-transform: uppercase;
+      }
+      p {
+        color: #a6a5a5;
+      }
+    }
+  }
+  .headerLogo {
+    width: 60px;
+    margin-right: 25px;
+  }
+
+  .headerRight {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    .cartButton {
+      border: 1px solid #5283af;
+      border-radius: 6px;
+      padding: 4px;
+      cursor: pointer;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 20px;
+      }
+    }
+    .cartLogo {
+      margin-right: 8px;
+      width: 22px;
+    }
+    .likedLogo {
+      width: 28px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+    .userLogo {
+      margin-left: 15px;
+      width: 22px;
+      cursor: pointer;
+    }
+  }
+}

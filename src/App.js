@@ -1,81 +1,58 @@
 import React from "react";
-import logoPng from "./images/logo.png";
-import addPng from "./images/add.png";
-import cartPng from "./images/cart.png";
-import likePng from "./images/like.png";
-import likedItemPng from "./images/likedItem.png";
-import orderPng from "./images/order.png";
-import removePng from "./images/remove.png";
+import uuid from "react-uuid";
+import Card from "./components/Card/Card";
+import Header from "./components/Header/Header";
+import Drawer from "./components/Drawer/Drawer";
 import searchPng from "./images/search.png";
-import userPng from "./images/user.png";
 import cubePng from "./images/goods/cube.png";
+import floppyPng from "./images/goods/floppy.png";
+import mirrorPng from "./images/goods/mirror.png";
+import keyPng from "./images/goods/key.png";
+import ballPng from "./images/goods/ball.png";
+
+const DB = [
+  {
+    id: uuid(),
+    title: "Кубик Рубика 3х3х3",
+    country: "Китай",
+    price: 800,
+    image: cubePng,
+  },
+  {
+    id: uuid(),
+    title: "Кубик Floppy 1x3x3",
+    country: "Китай",
+    price: 1000,
+    image: floppyPng,
+  },
+  {
+    id: uuid(),
+    title: "Зеркальный куб",
+    country: "Пакистан",
+    price: 1200,
+    image: mirrorPng,
+  },
+  {
+    id: uuid(),
+    title: "Головоломка Ключ",
+    country: "Россия",
+    price: 750,
+    image: keyPng,
+  },
+  {
+    id: uuid(),
+    title: "Шар Головоломка",
+    country: "Россия",
+    price: 1100,
+    image: ballPng,
+  },
+];
 
 function App() {
   return (
     <div className="wrapper">
-      <div className="overlay">
-        <div className="drawer">
-          <div className="headerCart">
-            <h1>Корзина</h1>
-            <img src={removePng} alt="remove" className="removeCart" />
-          </div>
-
-          <div className="itemsInCart">
-            <div className="itemInCart">
-              <img src={cubePng} alt="cube" className="itemPng" />
-              <div className="infoItemInCart">
-                <p>Кубик Рубика 3х3х3</p>
-                <b>Цена: 1000 руб</b>
-              </div>
-              <img src={removePng} alt="remove" className="removeButton" />
-            </div>
-          </div>
-
-          <div className="bottomInfoInCart">
-            <div className="salePlusPriceInfo">
-              <ul>
-                <li className="listInfoInCart">
-                  <span>Скидка:</span>
-                  <div></div>
-                  <b>0 рублей</b>
-                </li>
-                <li className="listInfoInCart">
-                  <span>Общая стоимость:</span>
-                  <div></div>
-                  <b>100 рублей</b>
-                </li>
-              </ul>
-              <button className="orderButton">
-                Оформить
-                <img src={orderPng} alt="order" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <header>
-        <div className="headerLeft">
-          <img src={logoPng} alt="logo" className="headerLogo" />
-          <div className="headerInfo">
-            <h2>Эврика!</h2>
-            <p>Онлайн-магазин головоломок</p>
-          </div>
-        </div>
-
-        <ul className="headerRight">
-          <li className="cartButton">
-            <img src={cartPng} alt="cart" className="cartLogo" />
-            <span>100 руб.</span>
-          </li>
-          <li>
-            <img src={likedItemPng} alt="liked" className="likedLogo" />
-          </li>
-          <li>
-            <img src={userPng} alt="user" className="userLogo" />
-          </li>
-        </ul>
-      </header>
+      <Drawer />
+      <Header />
       <div className="content">
         <div className="titlePlusSearchBlock">
           <h1>Все головоломки</h1>
@@ -85,39 +62,16 @@ function App() {
           </div>
         </div>
         <div className="cards">
-          <div className="card">
-            <img src={likePng} alt="like" className="likeItem" />
-            <img src={cubePng} alt="item" className="cardItem" />
-            <p>Кубик Рубика 3х3х3</p>
-            <p className="madeOfItem">
-              Производство: <b>Китай</b>
-            </p>
-            <div className="cardBottom">
-              <div>
-                <span>Цена:</span>
-                <b>1000 руб</b>
-              </div>
-              <button>
-                <img src={addPng} alt="add" className="addPngButton" />
-              </button>
-            </div>
-          </div>
-          <div className="card">
-            <img src={cubePng} alt="item" />
-            <p>Кубик Рубика 3х3х3</p>
-            <p className="madeOfItem">
-              Производство: <b>Китай</b>
-            </p>
-            <div className="cardBottom">
-              <div>
-                <span>Цена:</span>
-                <b>1000 руб</b>
-              </div>
-              <button>
-                <img src={addPng} alt="add" className="addPngButton" />
-              </button>
-            </div>
-          </div>
+          {DB.map((obj) => (
+            <Card
+              key={obj.id}
+              id={obj.id}
+              title={obj.title}
+              country={obj.country}
+              price={obj.price}
+              image={obj.image}
+            />
+          ))}
         </div>
       </div>
     </div>
