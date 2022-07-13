@@ -5,7 +5,7 @@ import cartPng from "./../../images/cart.png";
 import likedItemPng from "./../../images/likedItem.png";
 import userPng from "./../../images/user.png";
 
-const Header = () => {
+const Header = ({ onClickCart }) => {
   return (
     <header>
       <div className={styles.headerLeft}>
@@ -17,7 +17,7 @@ const Header = () => {
       </div>
 
       <ul className={styles.headerRight}>
-        <li className={styles.cartButton}>
+        <li className={styles.cartButton} onClick={onClickCart}>
           <img src={cartPng} alt="cart" className={styles.cartLogo} />
           <span>1000 руб.</span>
         </li>

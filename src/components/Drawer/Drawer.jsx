@@ -2,26 +2,37 @@ import React from "react";
 import styles from "./Drawer.module.scss";
 import orderPng from "./../../images/order.png";
 import removePng from "./../../images/remove.png";
-import cubePng from "./../../images/goods/cube.png";
 
-const Drawer = () => {
+const Drawer = ({ onClose, removedItem, items = [] }) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.drawer}>
         <div className={styles.headerCart}>
           <h1>Корзина</h1>
-          <img src={removePng} alt="remove" className={styles.removeCart} />
+          <img
+            src={removePng}
+            alt="remove"
+            className={styles.removeCart}
+            onClick={onClose}
+          />
         </div>
 
         <div className={styles.itemsInCart}>
-          <div className={styles.itemInCart}>
-            <img src={cubePng} alt="cube" className={styles.itemPng} />
-            <div className={styles.infoItemInCart}>
-              <p>Кубик Рубика 3х3х3</p>
-              <b>Цена: 1000 руб</b>
+          {items.map((obj) => (
+            <div className={styles.itemInCart}>
+              <img src={obj.image} alt="cube" className={styles.itemPng} />
+              <div className={styles.infoItemInCart}>
+                <p>{obj.title}</p>
+                <b>Цена: {obj.price} руб</b>
+              </div>
+              <img
+                src={removePng}
+                alt="remove"
+                className={styles.removeButton}
+                onClick={() => removedItem(obj.id)}
+              />
             </div>
-            <img src={removePng} alt="remove" className={styles.removeButton} />
-          </div>
+          ))}
         </div>
 
         <div className={styles.bottomInfoInCart}>

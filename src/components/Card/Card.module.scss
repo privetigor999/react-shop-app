@@ -38,11 +38,8 @@
   box-shadow: 0px 14px 30px rgba($color: #5283af, $alpha: 0.3);
   transform: translateY(-5px);
 }
-button {
-  border: none;
-  background: none;
+
+.addPngButton {
+  width: 26px;
   cursor: pointer;
-  .addPngButton {
-    width: 26px;
-  }
 }
