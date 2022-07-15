@@ -1,10 +1,12 @@
 import React, { useState, useEffect, createContext } from "react";
-
+import { Routes, Route, Link } from "react-router-dom";
+import styles from "./index.module.scss";
 import uuid from "react-uuid";
 import Card from "./components/Card/Card";
 import Header from "./components/Header/Header";
 import Drawer from "./components/Drawer/Drawer";
 import searchPng from "./images/search.png";
+import clearPng from "./images/remove.png";
 import cubePng from "./images/goods/cube.png";
 import floppyPng from "./images/goods/floppy.png";
 import mirrorPng from "./images/goods/mirror.png";
@@ -53,6 +55,7 @@ const items = [
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
   const [cartOpened, setCartOpened] = useState(false);
 
   const onAddToCart = (obj) => {
@@ -67,9 +70,10 @@ function App() {
     const itemRemoved = cartItems.filter((cartItem) => id !== cartItem.id);
     setCartItems(itemRemoved);
   };
+
   return (
     <AppContext.Provider value={cartItems}>
-      <div className="wrapper">
+      <div className={styles.wrapper}>
         {cartOpened && (
           <Drawer
             onClose={() => setCartOpened(false)}
@@ -78,26 +82,47 @@ function App() {
           />
         )}
         <Header onClickCart={() => setCartOpened(true)} />
-        <div className="content">
-          <div className="titlePlusSearchBlock">
-            <h1>Все головоломки</h1>
-            <div className="searchBlock">
-              <img src={searchPng} alt="search" />
-              <input type="text" placeholder="Поиск..." />
+        <div className={styles.content}>
+          <div className={styles.titlePlusSearchBlock}>
+            <h1>
+              {searchValue
+                ? `Поиск по запросу: «${searchValue}»`
+                : "Все головоломки"}
+            </h1>
+            <div className={styles.searchBlock}>
+              <img src={searchPng} alt="search" className={styles.searchPng} />
+              {searchValue && (
+                <img
+                  src={clearPng}
+                  alt="clear"
+                  className={styles.clearInputButton}
+                  onClick={() => setSearchValue("")}
+                />
+              )}
+              <input
+                onChange={(event) => setSearchValue(event.target.value)}
+                type="text"
+                value={searchValue}
+                placeholder="Поиск..."
+              />
             </div>
           </div>
-          <div className="cards">
-            {items.map((item) => (
-              <Card
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                country={item.country}
-                price={item.price}
-                image={item.image}
-                onClickAdd={(obj) => onAddToCart(obj)}
-              />
-            ))}
+          <div className={styles.cards}>
+            {items
+              .filter((item) =>
+                item.title.toLowerCase().includes(searchValue.toLowerCase())
+              )
+              .map((item) => (
+                <Card
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  country={item.country}
+                  price={item.price}
+                  image={item.image}
+                  onClickAdd={(obj) => onAddToCart(obj)}
+                />
+              ))}
           </div>
         </div>
       </div>
