@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/react-shop-app/static/css/main.ad1fff20.css",
-    "main.js": "/react-shop-app/static/js/main.e902f7b8.js",
+    "main.css": "/react-shop-app/static/css/main.3d838eeb.css",
+    "main.js": "/react-shop-app/static/js/main.0ee6589c.js",
+    "static/media/ball.png": "/react-shop-app/static/media/ball.564a7785eb2b05ee00c7.png",
+    "static/media/cube.png": "/react-shop-app/static/media/cube.c0b48e7c4d460b4b01b0.png",
+    "static/media/mirror.png": "/react-shop-app/static/media/mirror.55c61c0b98d154ff5d53.png",
+    "static/media/floppy.png": "/react-shop-app/static/media/floppy.cf0af8473843ed6b6a2e.png",
+    "static/media/key.png": "/react-shop-app/static/media/key.9d62a20729d37ad3f526.png",
+    "static/media/emptyCart.png": "/react-shop-app/static/media/emptyCart.56c66eb29df622645fe6.png",
+    "static/media/remove.png": "/react-shop-app/static/media/remove.ce2c68521011018ad9ae.png",
+    "static/media/logo.png": "/react-shop-app/static/media/logo.b208201ef118db63d35a.png",
+    "static/media/cart.png": "/react-shop-app/static/media/cart.ca1c0a49fbdd81dcda45.png",
+    "static/media/user.png": "/react-shop-app/static/media/user.764e316d2c157d829688.png",
+    "static/media/likedItem.png": "/react-shop-app/static/media/likedItem.2751dbf66001421f3a65.png",
+    "static/media/search.png": "/react-shop-app/static/media/search.95e482964862b7d0b16b.png",
     "index.html": "/react-shop-app/index.html",
-    "main.ad1fff20.css.map": "/react-shop-app/static/css/main.ad1fff20.css.map",
-    "main.e902f7b8.js.map": "/react-shop-app/static/js/main.e902f7b8.js.map"
+    "main.3d838eeb.css.map": "/react-shop-app/static/css/main.3d838eeb.css.map",
+    "main.0ee6589c.js.map": "/react-shop-app/static/js/main.0ee6589c.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad1fff20.css",
-    "static/js/main.e902f7b8.js"
+    "static/css/main.3d838eeb.css",
+    "static/js/main.0ee6589c.js"
   ]
 }
